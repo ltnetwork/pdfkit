@@ -5,7 +5,7 @@ node-zlib/
 src/
 playground/
 build/
-js/
+js/*
 !js/pdfkit.min.js
 demo/bundle.js
 *.html
