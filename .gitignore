@@ -6,6 +6,7 @@ src/
 playground/
 build/
 js/
+!js/pdfkit.min.js
 demo/bundle.js
 *.html
 !demo/browser.html

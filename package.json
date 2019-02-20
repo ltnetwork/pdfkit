@@ -39,7 +39,8 @@
     "prettier": "1.15.3",
     "rollup": "^0.65.0",
     "rollup-plugin-babel": "^3.0.7",
-    "rollup-plugin-cpy": "^1.0.0"
+    "rollup-plugin-cpy": "^1.0.0",
+    "terser": "^3.16.1"
   },
   "dependencies": {
     "crypto-js": "^3.1.9-1",
@@ -50,7 +51,7 @@
   },
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "rollup -c",
+    "build": "rollup -c && browserify --standalone PDFDocument ./js/pdfkit.cjs.js | terser --output ./pdfkit.min.js --compress --source-map",
     "demo": "cd demo && node test.js",
     "browser-demo": "browserify demo/browser.js > demo/bundle.js",
     "pdf-guide": "node docs/generate.js",
@@ -61,7 +62,7 @@
     "test:integration": "jest integration/ -i",
     "test:unit": "jest unit/ -i"
   },
-  "main": "js/pdfkit.js",
+  "main": "js/pdfkit.min.js",
   "module": "js/pdfkit.es5.js",
   "esnext": "js/pdfkit.esnext.js",
   "browserify": {

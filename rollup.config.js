@@ -23,8 +23,8 @@ export default [
     input: 'lib/document.js',
     external,
 		output: {
-			name: 'pdfkit',
-			file: pkg.main,
+			name: 'pdfkit.cjs',
+			file: 'js/pdfkit.cjs.js',
       format: 'cjs',
       sourcemap: true
 		},
